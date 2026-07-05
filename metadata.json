@@ -1,0 +1,6 @@
+{
+  "name": "SBI AI Banking Companion",
+  "description": "An interactive Neo-Institutional Brutalist AI banking companion application designed for SBI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

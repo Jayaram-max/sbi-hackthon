@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@700;800&display=swap');
+@import "tailwindcss";
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f3f3f4;
+}
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-surface: #f9f9f9;
+  --color-surface-dim: #dadada;
+  --color-surface-bright: #f9f9f9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f4;
+  --color-surface-container: #eeeeee;
+  --color-surface-container-high: #e8e8e8;
+  --color-surface-container-highest: #e2e2e2;
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #444748;
+  --color-inverse-surface: #2f3131;
+  --color-inverse-on-surface: #f0f1f1;
+  --color-outline: #747878;
+  --color-outline-variant: #c4c7c7;
+  --color-surface-tint: #5f5e5e;
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1c1b1b;
+  --color-on-primary-container: #858383;
+  --color-inverse-primary: #c8c6c5;
+  --color-secondary: #4d6700;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #bff521;
+  --color-on-secondary-container: #536d00;
+  --color-tertiary: #000000;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #1a1c1c;
+  --color-on-tertiary-container: #838484;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #e5e2e1;
+  --color-primary-fixed-dim: #c8c6c5;
+  --color-on-primary-fixed: #1c1b1b;
+  --color-on-primary-fixed-variant: #474646;
+  --color-secondary-fixed: #bff521;
+  --color-secondary-fixed-dim: #a5d700;
+  --color-on-secondary-fixed: #151f00;
+  --color-on-secondary-fixed-variant: #3a4d00;
+  --color-tertiary-fixed: #e2e2e2;
+  --color-tertiary-fixed-dim: #c6c6c7;
+  --color-on-tertiary-fixed: #1a1c1c;
+  --color-on-tertiary-fixed-variant: #454747;
+  --color-background: #f9f9f9;
+  --color-on-background: #1a1c1c;
+  --color-surface-variant: #e2e2e2;
+}
+
+@layer utilities {
+  .neo-border {
+    border: 1.5px solid #000000;
+  }
+
+  .neo-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(17, 17, 17, 1);
+  }
+
+  .neo-shadow-accent {
+    box-shadow: 4px 4px 0px 0px #bff521;
+  }
+
+  .neo-shadow-lg {
+    box-shadow: 8px 8px 0px 0px rgba(17, 17, 17, 1);
+  }
+
+  .bg-grid-pattern {
+    background-image: radial-gradient(#111111 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Custom Animation for Logo Entrance */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-reveal {
+  animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Micro-interaction: Breathing effect for the AI orb */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); filter: blur(40px); }
+  50% { transform: scale(1.1); filter: blur(50px); }
+}
+
+.ai-pulse {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.2; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.pulse-effect {
+  position: absolute;
+  border-radius: 9999px;
+  border: 2px solid #bff521;
+  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}
+
+.pulse-effect-2 {
+  animation-delay: 0.5s;
+}
+
+.scan-line {
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #bff521;
+  box-shadow: 0 0 15px #bff521;
+  animation: scan 3s linear infinite;
+  z-index: 10;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+.voice-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1.5px solid #bff521;
+  border-radius: 50%;
+  animation: pulse-ring-voice 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring-voice {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+.ring-1 { animation-delay: 0s; }
+.ring-2 { animation-delay: 0.5s; }
+.ring-3 { animation-delay: 1s; }
