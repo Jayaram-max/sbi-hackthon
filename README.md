@@ -1,5 +1,6 @@
 <div align="center">
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/Jayaram-max/sbi-hackthon/blob/e49aaf5a6259e44b5a2f528d227e3d39ecd3728d/Screenshot%202026-07-05%20193234.png" />
+   <img width="1200" height="475" alt="GHBanner" src="https://github.com/Jayaram-max/sbi-hackthon/blob/5afd1da8df9774e8ded486bf04c245cabd764350/Screenshot%202026-07-05%20194315.png" />
 </div>
 
 # Run and deploy 
